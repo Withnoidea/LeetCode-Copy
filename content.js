@@ -5,7 +5,7 @@
   function createCopyButton() {
     const btn = document.createElement("button");
     btn.id = "leetcode-copy-btn";
-    btn.textContent = "📋 复制题目";
+    btn.textContent = "复制题目";
     btn.addEventListener("click", handleCopy);
 
     // Try to insert next to the title
@@ -515,7 +515,7 @@
   // Handle copy button click
   async function handleCopy() {
     const btn = document.getElementById("leetcode-copy-btn");
-    btn.textContent = "⏳ 提取中...";
+    btn.textContent = "提取中...";
     btn.className = "";
     btn.id = "leetcode-copy-btn";
 
@@ -524,20 +524,20 @@
       const success = await copyToClipboard(markdown);
 
       if (success) {
-        btn.textContent = "✅ 已复制!";
+        btn.textContent = "已复制!";
         btn.classList.add("copied");
       } else {
-        btn.textContent = "❌ 复制失败";
+        btn.textContent = "复制失败";
         btn.classList.add("error");
       }
     } catch (err) {
       console.error("LeetCode Copy Error:", err);
-      btn.textContent = "❌ 出错了";
+      btn.textContent = "出错了";
       btn.classList.add("error");
     }
 
     setTimeout(() => {
-      btn.textContent = "📋 复制题目";
+      btn.textContent = "复制题目";
       btn.className = "";
       btn.id = "leetcode-copy-btn";
     }, 2000);
